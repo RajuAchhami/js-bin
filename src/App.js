@@ -19,7 +19,7 @@ const App = () => {
       let iframe = document.getElementById("output");
 
       iframe.contentDocument.body.innerHTML = htmlCode + "<style>" + cssCode + "</style>"
-iframe.contentWindow.eval(jsCode)
+      iframe.contentWindow.eval(jsCode)
     }
     return () => {
 
