@@ -6,9 +6,11 @@ const Outputpage = () => {
 
   return (
 
-    <div className={styles.out}>
+    <div className={'bg-white'}>
       <label htmlFor="">output</label>
-      <iframe title="myFrame" id="output" ></iframe>
+      <iframe title="myFrame" id="output" >
+        
+      </iframe>
 
     </div>
   )

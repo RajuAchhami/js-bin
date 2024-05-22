@@ -1,7 +1,6 @@
 .htmlpage textarea{
     width: 100%;
-    height: 28vh;
-
+    height: 100%;
 }
 
 .out iframe{
