@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import HtmlPage from './components/HtmlPage/HtmlPage'
+import Navigation from './components/Navigation/Navigation'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { CssPage } from './components/CssPage/CssPage'
+import { JavaPage } from './components/JavascriptPage/JavaPage'
+import ConsolePage from './components/ConsolePage/ConsolePage'
+import Outputpage from './components/Output/Outputpage'
 
-function App() {
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <BrowserRouter>
+        <Navigation />
+        <Routes>
+          <Route path="/html" element={<HtmlPage />} />
+          <Route path="/css" element={<CssPage />} />
+          <Route path="/javaScript" element={<JavaPage />} />
+          <Route path="/console" element={<ConsolePage />} />
+          <Route path="/output" element={<Outputpage />} />
+        </Routes>
+      </BrowserRouter>
+
+
+
+    </>
+  )
 }
 
-export default App;
+export default App

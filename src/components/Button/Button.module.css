@@ -1,0 +1,36 @@
+.primary_btn {
+    background-color: #EDEDED;
+    padding: 5px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid  hsl(0, 0%, 80%);
+    cursor: pointer;
+
+}
+
+.left_bdr{
+    background-color: #EDEDED;
+    padding: 5px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid  hsl(0, 0%, 80%);
+    cursor: pointer;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+
+}
+
+.right_bdr{
+    background-color: #EDEDED;
+    padding: 5px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid  hsl(0, 0%, 80%);
+    cursor: pointer;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+}

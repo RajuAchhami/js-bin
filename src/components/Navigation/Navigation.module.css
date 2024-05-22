@@ -1,0 +1,30 @@
+.container{
+    background-color: #EDEDED;
+    min-height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5px;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo img{
+    padding: 2px;
+    height: 38px;
+   
+}
+
+.panel{
+    display: flex;
+    align-items: center;
+}
+.help{
+    display: flex;
+    align-items: center;
+
+}
+
