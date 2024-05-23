@@ -2,10 +2,11 @@ import React from 'react'
 import styles from './Navigation.module.css'
 import Button from '../Button/Button'
 import Dropdown from '../Dropdown/Dropdown'
-import { useNavigate } from 'react-router-dom'
+
 
 const Tabs = [
     {
+        
         label: 'Html',
         value: 0
     },
@@ -20,11 +21,8 @@ const Tabs = [
     {
         label: 'Console',
         value: 3
-    },
-    {
-        label: 'Output',
-        value: 4
-    },
+    }
+
 ]
 
 const Navigation = ({
@@ -42,7 +40,7 @@ const Navigation = ({
                     </div>
                     <button className='text-red-900'>Add Library</button>
                 </div>
-                <div className={styles.panel}>
+                <div  className={styles.panel}>
                     {
                         Tabs?.map((tab, tabIndex) => {
                             return <Button
@@ -60,11 +58,7 @@ const Navigation = ({
                                 text={tab?.label} isleftbdr={tabIndex === 0} isrightbdr={tabIndex === 4} />
                         })
                     }
-                    {/* <Button onClick={() => navigate('/html')} text="HTML" isleftbdr={true} />
-                    <Button onClick={() => navigate('/css')} text="CSS" />
-                    <Button onClick={() => navigate('/javaScript')} text="JavaScript" />
-                    <Button onClick={() => navigate('/console')} text="Console" />
-                    <Button onClick={() => navigate('/output')} text="Output" isrightbdr={true} /> */}
+
                 </div>
                 <div className={styles.help}>
                     <Button text="Login or Register" />
