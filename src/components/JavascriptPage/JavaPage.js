@@ -1,17 +1,16 @@
 import React from 'react';
-import styles from './javapage.module.css'
 
 export const JavaPage = ({
   jsCode,
   setJsCode,
 }) => {
   return (
-    <div className={styles.javapage}>
+    <div className={"w-full h-screen border-2 flex-1"}>
       <label htmlFor="">Javascript</label><br />
-      <textarea 
-        onChange={(e) => setJsCode(e.target.value)}
-        value={jsCode}  
-        name="html" id=""></textarea>
+      <textarea
+        onChange={(e) => setJsCode(e?.target?.value)}
+        value={jsCode}
+        className='w-full h-full' id="java_code"></textarea>
     </div>
   )
 }

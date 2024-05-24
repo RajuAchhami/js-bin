@@ -1,11 +1,16 @@
 import React from 'react'
 
-const ConsolePage = () => {
+const ConsolePage = ({ consoleCode, setConsoleCode }) => {
   return (
-    <div>  
+
+    <div className={"w-full h-screen border-2 flex-1"}>
       <label htmlFor="">Console</label><br />
-      <textarea name="console" id=""></textarea>
+      <textarea
+        onChange={(e) => setConsoleCode(e.target.value)}
+        value={consoleCode}
+        className='w-full h-full' id="css_code"></textarea>
     </div>
+
   )
 }
 

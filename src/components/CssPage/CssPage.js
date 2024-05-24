@@ -1,18 +1,16 @@
 import React from 'react'
-import styles from './Csspage.module.css'
-
 export const CssPage = ({
   cssCode,
-  setCssCode, 
+  setCssCode,
 }) => {
 
   return (
-    <div className={styles.csspage}>
+    <div className={"w-full h-screen border-2 flex-1"}>
       <label htmlFor="">CSS</label><br />
       <textarea
-      onChange={(e)=>setCssCode(e.target.value)}
-      value={cssCode}
-      name="css" id="css_code"></textarea>
+        onChange={(e) => setCssCode(e.target.value)}
+        value={cssCode}
+        className='w-full h-full' id="css_code"></textarea>
     </div>
   )
 }

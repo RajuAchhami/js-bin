@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react'
-import HtmlPage from './components/HtmlPage/HtmlPage'
-import Navigation from './components/Navigation/Navigation'
-import { CssPage } from './components/CssPage/CssPage'
-import { JavaPage } from './components/JavascriptPage/JavaPage'
-import ConsolePage from './components/ConsolePage/ConsolePage'
+import React, { useEffect, useState } from 'react';
+import HtmlPage from './components/HtmlPage/HtmlPage';
+import Navigation from './components/Navigation/Navigation';
+import { CssPage } from './components/CssPage/CssPage';
+import { JavaPage } from './components/JavascriptPage/JavaPage';
+import ConsolePage from './components/ConsolePage/ConsolePage';
+
 
 
 
@@ -20,11 +21,17 @@ const App = () => {
 
     onkeyup = () => {
       let output = document.getElementById("output");
-      output.contentDocument.body.innerHTML = htmlCode + "<style>" + cssCode + "</style>" ;
-      output.contentWindow.eval(jsCode.valueOf);
+      output.contentDocument.body.innerHTML = htmlCode + "<style>" + cssCode + "</style>";
+
     }
 
-  }, [htmlCode, cssCode, jsCode]);
+    onclick = () => {
+      let output = document.getElementById("output");
+      output.contentWindow.eval(jsCode);
+    }
+
+
+  }, [htmlCode, cssCode, jsCode,]);
 
 
   return (
@@ -46,11 +53,11 @@ const App = () => {
           selectedTabs.includes(1) && <CssPage
             cssCode={cssCode}
             setCssCode={setCssCode}
-       
+
           />
         }
         {
-          selectedTabs.includes(2) && <JavaPage 
+          selectedTabs.includes(2) && <JavaPage
             jsCode={jsCode}
             setJsCode={setJsCode} />
 
@@ -60,9 +67,14 @@ const App = () => {
         }
         {
 
-          <div >
-            <label htmlFor="">output</label>
-            <iframe className={' bg-white w-full h-screen border-2'}  title="myFrame" id="output" >
+          <div className={"w-full h-screen border-2  flex-1"} >
+
+            <div className='flex justify-between'>
+              <label htmlFor="">output</label>
+              <button id="button" className='bg-green-900 px-3 me-3 rounded-md text-white font-semibold' >Run</button>
+            </div>
+
+            <iframe className='w-full h-full bg-white' title="myFrame" id="output" >
 
             </iframe>
 

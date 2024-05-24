@@ -2,34 +2,40 @@ import React from 'react'
 import styles from './Navigation.module.css'
 import Button from '../Button/Button'
 import Dropdown from '../Dropdown/Dropdown'
+import { v4 as uuidv4 } from 'uuid'
 
 
-const Tabs = [
-    {
-        
-        label: 'Html',
-        value: 0
-    },
-    {
-        label: 'Css',
-        value: 1
-    },
-    {
-        label: 'Javascript',
-        value: 2
-    },
-    {
-        label: 'Console',
-        value: 3
-    }
 
-]
+
 
 const Navigation = ({
     selectedTabs,
     setSelectedTabs
 }) => {
-    // const navigate = useNavigate();
+
+
+    const Tabs = [
+        {
+
+            label: 'HTML',
+            value: 0
+        },
+        {
+            label: 'CSS',
+            value: 1
+        },
+        {
+            label: 'Javascript',
+            value: 2
+        },
+        {
+            label: 'Console',
+            value: 3
+        }
+
+    ]
+
+
     return (
         <>
             <div className={styles.container}>
@@ -40,10 +46,11 @@ const Navigation = ({
                     </div>
                     <button className='text-red-900'>Add Library</button>
                 </div>
-                <div  className={styles.panel}>
+                <div className={styles.panel}>
                     {
                         Tabs?.map((tab, tabIndex) => {
                             return <Button
+                                key={uuidv4()}
                                 onClick={() => {
                                     setSelectedTabs((prev) => {
                                         const newD = [...prev]
@@ -55,7 +62,7 @@ const Navigation = ({
                                         }
                                     })
                                 }}
-                                text={tab?.label} isleftbdr={tabIndex === 0} isrightbdr={tabIndex === 4} />
+                                text={tab?.label} isleftbdr={tabIndex === 0} isrightbdr={tabIndex === 3} />
                         })
                     }
 
